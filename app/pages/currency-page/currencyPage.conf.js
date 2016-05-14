@@ -1,10 +1,10 @@
 'use strict';
 angular.module('currency-page')
     .config(($stateProvider) => {
-        $stateProvider.state('map', {
+        $stateProvider.state('currency', {
             url: '/currency',
             templateUrl: 'pages/currency-page/currency-page.tmpl.html',
-            controller: 'currencyPageCtrl',
+            controller: 'CurrencyPageCtrl',
             controllerAs: 'currencyPageCtrl'
         });
     });
