@@ -1,0 +1,3 @@
+# ngFinance
+
+Sample AngularJS application

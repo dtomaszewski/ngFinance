@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manage Your Finances</title>
+    <link href="assets/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="app.css"/>
+</head>
+<body data-ng-app="ngFinanceApp">
+
+<ngf-top-bar></ngf-top-bar>
+<section layout="row" flex="" class="u-maxHeight">
+    <ngf-sidebar></ngf-sidebar>
+    <div ui-view></div>
+</section>
+
+<!--VENDOR-->
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-aria/angular-aria.js"></script>
+<script src="node_modules/angular-animate/angular-animate.js"></script>
+<script src="node_modules/angular-material/angular-material.js"></script>
+<script src='node_modules/lodash/lodash.js'></script>
+<script src='node_modules/angular-ui-router/release/angular-ui-router.js'></script>
+
+<!--LOCAL-->
+<script src="app.js"></script>
+<script src="app.conf.js"></script>
+<script src="pages/main-page/mainPage.js"></script>
+<script src="pages/main-page/mainPage.conf.js"></script>
+<script src="pages/main-page/mainPageCtrl.js"></script>
+<script src="components/ngf-top-bar/ngfTopBar.js"></script>
+<script src="components/ngf-sidebar/ngfSidebar.js"></script>
+</body>
+</html>

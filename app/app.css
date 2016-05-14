@@ -1,0 +1,10 @@
+.u-maxHeight {
+  height: 100%; }
+
+.ngfTopBar {
+  background-color: #42414d;
+  border-bottom: 4px solid #51c3ee;
+  height: 70px; }
+
+.ngfSidebar {
+  border-right: 1px solid black; }
