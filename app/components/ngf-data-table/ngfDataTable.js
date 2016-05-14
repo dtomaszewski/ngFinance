@@ -7,7 +7,9 @@ angular.module('ngf-data-table', ['md.data.table'])
             templateUrl: 'components/ngf-data-table/ngf-data-table.tmpl.html',
             scope: {
                 columnNames: '=',
-                items: '='
+                items: '=',
+                title: '@',
+                addItem: '&'
             }
         };
 

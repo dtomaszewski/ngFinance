@@ -3,8 +3,12 @@ class MainPageCtrl {
     constructor(Stocks) {
         const vm = this;
 
-        vm.columnNames = ['Name', 'Count'];
+        vm.columnNames = ['Symbol', 'Name', 'Count'];
         vm.allStocks = Stocks.getAllForUser();
+
+        vm.addStock = function () {
+            Stocks.addModalOpen();
+        };
     }
 }
 
