@@ -1,7 +1,9 @@
 'use strict';
 class MainPageCtrl {
-    constructor() {
+    constructor(Stocks) {
         const vm = this;
+
+        vm.allStocks = Stocks.getAllForUser();
     }
 }
 

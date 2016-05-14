@@ -1,2 +1,2 @@
 'use strict';
-angular.module('main-page', []);
+angular.module('main-page', ['stocks']);
