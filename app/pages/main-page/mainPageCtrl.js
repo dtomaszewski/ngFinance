@@ -3,6 +3,7 @@ class MainPageCtrl {
     constructor(Stocks) {
         const vm = this;
 
+        vm.columnNames = ['Name', 'Count'];
         vm.allStocks = Stocks.getAllForUser();
     }
 }

@@ -1,0 +1,14 @@
+<md-table-container>
+    <table md-table>
+        <thead md-head md-order="myOrder">
+        <th md-column ng-repeat="columnName in columnNames">{{ columnName }}</th>
+        </thead>
+
+        <tbody md-body>
+        <tr ng-repeat="item in items | orderBy: myOrder">
+            <td md-cell>{{item.name}}</td>
+            <td md-cell>{{item.count}}</td>
+        </tr>
+        </tbody>
+    </table>
+</md-table-container>

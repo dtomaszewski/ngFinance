@@ -1,8 +1,6 @@
 <md-content layout="column" class="content-wrapper md-padding" flex layout-column id="content">
     <section>
-        main page
-
-        {{ mainPageCtrl.allStocks }}
+        <ngf-data-table items="mainPageCtrl.allStocks" column-names="mainPageCtrl.columnNames"></ngf-data-table>
     </section>
 </md-content>
 

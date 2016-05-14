@@ -1,4 +1,4 @@
-describe('Sidebar', () => {
+describe('Top bar', () => {
     it('', () => {
 
     });
