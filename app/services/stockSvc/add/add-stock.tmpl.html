@@ -1,1 +1,35 @@
-Add stock modal
+<md-content layout-padding>
+    <form name="addStockForm" ng-submit="addStockCtrl.addStock(addStockCtrl.stock)">
+        <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label for="symbol">Symbol</label>
+                <input name="symbol" id="symbol" ng-model="addStockCtrl.stock.symbol" ng-required="true">
+                <div ng-messages="addStockForm.symbol.$error">
+                    <div ng-message="required">Symbol is required.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-sm>
+                <label for="name">Name</label>
+                <input name="name" id="name"  ng-model="addStockCtrl.stock.name" ng-required="true">
+                <div ng-messages="addStockForm.name.$error">
+                    <div ng-message="required">Name is required.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-sm>
+                <label for="count">Count</label>
+                <input name="count" id="count" ng-model="addStockCtrl.stock.count" type="number" ng-required="true">
+                <div ng-messages="addStockForm.count.$error">
+                    <div ng-message="required">Count is required.</div>
+                </div>
+            </md-input-container>
+        </div>
+        <md-toolbar class="md-default">
+            <div class="md-toolbar-tools">
+                <div flex class="flex"></div>
+                <md-button type="submit" class="md-raised md-primary">Submit</md-button>
+            </div>
+        </md-toolbar>
+    </form>
+</md-content>

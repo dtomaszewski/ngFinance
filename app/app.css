@@ -1,6 +1,9 @@
 .u-maxHeight {
   height: 100%; }
 
+.md-toolbar-tools {
+  background-color: #fff; }
+
 .ngfTopBar {
   background-color: #42414d;
   border-bottom: 4px solid #51c3ee;

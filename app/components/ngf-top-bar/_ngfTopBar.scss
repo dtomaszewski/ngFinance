@@ -1,8 +1,5 @@
 .ngfTopBar {
-  $topBarBgColor: #42414d;
-  $topBarBorderColor: #51c3ee;
-
-  background-color: $topBarBgColor;
-  border-bottom: 4px solid $topBarBorderColor;
+  background-color: $brandDarkBgColor;
+  border-bottom: 4px solid $brandPrimaryColor;
   height: 70px;
 }

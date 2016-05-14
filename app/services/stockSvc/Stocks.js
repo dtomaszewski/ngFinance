@@ -1,8 +1,8 @@
 'use strict';
 angular.module('stocks', ['firebase'])
-    .factory('Stocks', ($firebaseArray, $firebaseObject, Firebase, $mdDialog) => {
+    .factory('Stocks', ($firebaseArray, $firebaseObject, Firebase, $mdDialog, $q) => {
         const stocksRef = new Firebase('https://ngfinance.firebaseio.com/stocks');
-        let userStockList;
+    let userStockList;
 
         function getAllForUser() {
             const fbRef = stocksRef.orderByChild('count');
@@ -18,11 +18,16 @@ angular.module('stocks', ['firebase'])
                 focusOnOpen: false,
                 targetEvent: event,
                 templateUrl: 'services/stockSvc/add/add-stock.tmpl.html'
-            }).then(() => console.log('item added'));
+            }).then(() => $mdDialog.hide());
+        }
+
+        function add(stock) {
+            return $q.when(userStockList.$add(stock));
         }
 
         return {
             getAllForUser,
-            addModalOpen
+            addModalOpen,
+            add
         };
     });
