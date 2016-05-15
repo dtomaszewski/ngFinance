@@ -1,4 +1,4 @@
-<div>
+<md-card>
     <md-toolbar class="md-table-toolbar md-default">
         <div class="md-toolbar-tools">
             <h2 class="md-title">{{ title }}</h2>
@@ -9,13 +9,15 @@
         </div>
     </md-toolbar>
     <md-table-container>
-        <table md-table>
+        <table md-table md-row-select multiple>
             <thead md-head md-order="myOrder">
-            <th md-column ng-repeat="fieldDataItem in fieldData">{{ fieldDataItem.columnName }}</th>
+            <tr md-row>
+                <th md-column ng-repeat="fieldDataItem in fieldData">{{ fieldDataItem.columnName }}</th>
+            </tr>
             </thead>
 
             <tbody md-body>
-            <tr ng-repeat="item in items | orderBy: myOrder">
+            <tr md-row md-auto-select ng-repeat="item in items | orderBy: myOrder">
                 <td md-cell ng-repeat="fieldDataItem in fieldData">
                     {{ fieldDataItem.dataField ? item.data[fieldDataItem.fieldName] : item[fieldDataItem.fieldName] }}
                 </td>
@@ -23,4 +25,4 @@
             </tbody>
         </table>
     </md-table-container>
-</div>
+</md-card>

@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Raleway-Light';
+  src: url("styles/fonts/Raleway-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
 .u-maxHeight {
   height: 100%; }
 
@@ -7,7 +13,11 @@
 .ngfTopBar {
   background-color: #42414d;
   border-bottom: 4px solid #51c3ee;
+  font-family: Raleway-Light, sans-serif;
   height: 70px; }
+  .ngfTopBar h1 {
+    color: #dbdbdd;
+    font-weight: normal; }
 
 .ngfSidebar {
   border-right: 1px solid black; }
