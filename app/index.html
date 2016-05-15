@@ -12,12 +12,13 @@
 </head>
 <body data-ng-app="ng-finance-app" data-ng-controller="ngFinanceAppCtrl as ngFinanceAppCtrl">
 
-<ngf-top-bar title="Finance Application"></ngf-top-bar>
-<section layout="row" flex="" class="u-maxHeight">
-    <ngf-sidebar links="ngFinanceAppCtrl.sidebarLinks"></ngf-sidebar>
-    <div ui-view></div>
-</section>
-
+<md-content>
+    <ngf-top-bar title="Finance Application"></ngf-top-bar>
+    <section layout="row" flex="" class="u-maxHeight">
+        <ngf-sidebar links="ngFinanceAppCtrl.sidebarLinks"></ngf-sidebar>
+        <div ui-view></div>
+    </section>
+</md-content>
 <!--VENDOR-->
 <script src="node_modules/angular/angular.js"></script>
 <script src="node_modules/angular-aria/angular-aria.js"></script>

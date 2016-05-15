@@ -1,5 +1,4 @@
 module.exports = function(config) {
-    console.log('karma conf');
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -23,13 +22,11 @@ module.exports = function(config) {
             'node_modules/angular-material/angular-material.js',
             'node_modules/angular-material-data-table/dist/md-data-table.js',
             'app.js',
-            '.tmp/currency-page/currencyPage.js',
-            '.tmp/main-page/mainPage.js',
-            '.tmp/**/*.js',
-            '.tmp/**/**/*.js',
-            'components/**/*.spec.js',
-            'pages/**/*.spec.js',
-            'services/**/*.spec.js'
+            'pages/currency-page/currencyPage.js',
+            'pages/main-page/mainPage.js',
+            'components/**/*.js',
+            'pages/**/*.js',
+            'services/**/*.js'
         ],
 
         // list of files to exclude
@@ -40,8 +37,9 @@ module.exports = function(config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            // 'components/**/*.js': ['coverage'],
-            // 'pages/**/*.js': ['coverage'],
+            'pages/**/!(*spec).js': ['coverage'],
+            'components/**/!(*spec).js': ['coverage'],
+            'services/**/!(*spec).js': ['coverage'],
             'pages/**/*.spec.js': ['babel'],
             'components/**/*.spec.js': ['babel'],
             'services/**/*.spec.js': ['babel'],
@@ -83,7 +81,7 @@ module.exports = function(config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome'],
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits

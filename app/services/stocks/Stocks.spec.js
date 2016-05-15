@@ -1,4 +1,4 @@
-fdescribe('Service : Stock', () => {
+describe('Service : Stock', () => {
     let $q;
     let $mdDialog;
     let $rootScope;
