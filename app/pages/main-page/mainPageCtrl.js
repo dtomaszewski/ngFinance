@@ -3,7 +3,25 @@ class MainPageCtrl {
     constructor($timeout, Stocks, StocksData) {
         const vm = this;
 
-        vm.columnNames = ['Symbol', 'Name', 'Count', 'Today price'];
+        vm.fieldData = [
+            {
+                columnName: 'Symbol',
+                fieldName: 'symbol'
+            },
+            {
+                columnName: 'Name',
+                fieldName: 'name'
+            },
+            {
+                columnName: 'Count',
+                fieldName: 'count'
+            },
+            {
+                columnName: 'Today price',
+                fieldName: 'Close',
+                dataField: true
+            }
+        ];
 
         Stocks.getAllForUser().then((result) => {
             vm.allStocks = result;

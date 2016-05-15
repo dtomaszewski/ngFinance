@@ -6,7 +6,7 @@ angular.module('ngf-data-table', ['md.data.table'])
             replace: true,
             templateUrl: 'components/ngf-data-table/ngf-data-table.tmpl.html',
             scope: {
-                columnNames: '=',
+                fieldData: '=',
                 items: '=',
                 title: '@',
                 addItem: '&'
