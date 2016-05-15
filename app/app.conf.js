@@ -1,5 +1,5 @@
 'use strict';
-angular.module('ngFinanceApp')
+angular.module('ng-finance-app')
     .config(($urlRouterProvider) => {
         $urlRouterProvider.otherwise('/main');
     });

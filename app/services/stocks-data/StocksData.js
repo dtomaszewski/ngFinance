@@ -18,7 +18,6 @@ angular.module('stocks-data', [])
             const url = getUrl(query);
 
             $http.jsonp(url).success((json) => {
-                console.log('json.query.results ', json);
                 if (json.query.results) {
                     deferred.resolve(json.query.results.quote);
                 } else {

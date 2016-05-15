@@ -10,11 +10,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="app.css"/>
 </head>
-<body data-ng-app="ngFinanceApp">
+<body data-ng-app="ng-finance-app" data-ng-controller="ngFinanceAppCtrl as ngFinanceAppCtrl">
 
 <ngf-top-bar title="Finance Application"></ngf-top-bar>
 <section layout="row" flex="" class="u-maxHeight">
-    <ngf-sidebar></ngf-sidebar>
+    <ngf-sidebar links="ngFinanceAppCtrl.sidebarLinks"></ngf-sidebar>
     <div ui-view></div>
 </section>
 
@@ -32,8 +32,6 @@
 <script src='node_modules/moment/moment.js'></script>
 
 <!--LOCAL-->
-<script src="app.js"></script>
-<script src="app.conf.js"></script>
 <script src="pages/main-page/mainPage.js"></script>
 <script src="pages/main-page/mainPage.conf.js"></script>
 <script src="pages/main-page/mainPageCtrl.js"></script>
@@ -46,5 +44,8 @@
 <script src="services/stocks/Stocks.js"></script>
 <script src="services/stocks/add/addStockCtrl.js"></script>
 <script src="services/stocks-data/StocksData.js"></script>
+<script src="app.js"></script>
+<script src="app.conf.js"></script>
+<script src="appCtrl.js"></script>
 </body>
 </html>

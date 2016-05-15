@@ -9,7 +9,7 @@
         </div>
     </md-toolbar>
     <md-table-container>
-        <table md-table md-row-select multiple>
+        <table md-table>
             <thead md-head md-order="myOrder">
             <tr md-row>
                 <th md-column ng-repeat="fieldDataItem in fieldData">{{ fieldDataItem.columnName }}</th>
@@ -17,7 +17,7 @@
             </thead>
 
             <tbody md-body>
-            <tr md-row md-auto-select ng-repeat="item in items | orderBy: myOrder">
+            <tr md-row ng-repeat="item in items | orderBy: myOrder">
                 <td md-cell ng-repeat="fieldDataItem in fieldData">
                     {{ fieldDataItem.dataField ? item.data[fieldDataItem.fieldName] : item[fieldDataItem.fieldName] }}
                 </td>

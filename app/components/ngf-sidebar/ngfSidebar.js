@@ -5,7 +5,9 @@ angular.module('ngf-sidebar', [])
             restrict: 'E',
             replace: true,
             templateUrl: 'components/ngf-sidebar/ngf-sidebar.tmpl.html',
-            scope: {}
+            scope: {
+                links: '='
+            }
         };
 
         return directive;

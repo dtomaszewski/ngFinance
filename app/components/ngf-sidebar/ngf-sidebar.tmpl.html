@@ -1,9 +1,8 @@
 <section class="ngfSidebar">
     <md-sidenav layout-column class="md-sidenav-left " md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
         <md-content layout-fill role="navigation">
-            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
-                <div><a href="" ui-sref="main">Main page</a></div>
-                <div><a href="" ui-sref="currency">Currency page</a></div>
+            <section ng-repeat="link in links" layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                <md-button class="md-primary ngfSidebar-button" ui-sref="{{ link.sref }}">{{ link.title }}</md-button>
             </section>
         </md-content>
     </md-sidenav>

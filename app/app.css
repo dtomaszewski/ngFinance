@@ -17,7 +17,14 @@
   height: 70px; }
   .ngfTopBar h1 {
     color: #dbdbdd;
-    font-weight: normal; }
+    font-weight: normal;
+    margin: 0; }
 
 .ngfSidebar {
-  border-right: 1px solid black; }
+  border-right: 1px solid #dbdbdd; }
+
+.ngfSidebar-button {
+  width: 100%; }
+  .ngfSidebar-button.md-button.md-primary {
+    color: #42414d;
+    margin: 20px; }
