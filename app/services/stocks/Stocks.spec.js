@@ -27,7 +27,7 @@ fdescribe('Service : Stock', () => {
             controllerAs: 'addStockCtrl',
             focusOnOpen: false,
             targetEvent: event,
-            templateUrl: 'services/stockSvc/add/add-stock.tmpl.html'
+            templateUrl: 'services/stocks/add/add-stock.tmpl.html'
         };
 
         spyOn($mdDialog, 'show').and.callFake(() => {

@@ -17,7 +17,7 @@ angular.module('stocks', ['firebase', 'ngMaterial'])
                 controllerAs: 'addStockCtrl',
                 focusOnOpen: false,
                 targetEvent: event,
-                templateUrl: 'services/stockSvc/add/add-stock.tmpl.html'
+                templateUrl: 'services/stocks/add/add-stock.tmpl.html'
             }).then(() => $mdDialog.hide());
         }
 
