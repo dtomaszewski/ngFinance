@@ -4,15 +4,17 @@
   "description": "sample AngularJS app",
   "main": "app.js",
   "scripts": {
-    "test": "karma start",
+    "karma": "karma start karma.conf.js",
+    "test": "concurrently \"npm run babel\" \"npm run karma\" ",
     "styles": "node-sass app.scss app.css -w",
-    "babel": "babel pages components --out-dir .tmp --watch --presets es2015",
+    "babel": "babel pages components services --out-dir .tmp --watch --presets es2015",
     "server": "lite-server",
     "start": "concurrently \"npm run styles\" \"npm run babel\" \"npm run server\""
   },
   "author": "dtomaszewski.js@gmail.com",
   "license": "ISC",
   "devDependencies": {
+    "angular-localforage": "^1.2.5",
     "angular-mocks": "^1.5.5",
     "babel": "^6.5.2",
     "babel-cli": "^6.8.0",
@@ -24,7 +26,9 @@
     "eslint-plugin-import": "^1.8.0",
     "eslint-plugin-jsx-a11y": "^1.2.0",
     "eslint-plugin-react": "^5.1.1",
+    "isparta": "^4.0.0",
     "jasmine": "^2.4.1",
+    "jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
     "karma-angular": "0.0.6",
     "karma-babel-preprocessor": "^6.0.1",
@@ -33,6 +37,8 @@
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.0",
     "lite-server": "^2.2.0",
+    "localforage": "^1.4.1",
+    "mockfirebase": "^0.12.0",
     "node-sass": "^3.7.0",
     "phantomjs-prebuilt": "^2.1.7"
   },

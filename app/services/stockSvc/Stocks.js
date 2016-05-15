@@ -1,8 +1,8 @@
 'use strict';
-angular.module('stocks', ['firebase'])
+angular.module('stocks', ['firebase', 'ngMaterial'])
     .factory('Stocks', ($firebaseArray, $firebaseObject, Firebase, $mdDialog, $q) => {
         const stocksRef = new Firebase('https://ngfinance.firebaseio.com/stocks');
-    let userStockList;
+        let userStockList;
 
         function getAllForUser() {
             const fbRef = stocksRef.orderByChild('count');
