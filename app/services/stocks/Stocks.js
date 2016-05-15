@@ -7,7 +7,7 @@ angular.module('stocks', ['firebase', 'ngMaterial'])
         function getAllForUser() {
             const fbRef = stocksRef.orderByChild('count');
             userStockList = $firebaseArray(fbRef);
-            return userStockList;
+            return userStockList.$loaded();
         }
 
         function addModalOpen() {
@@ -25,9 +25,17 @@ angular.module('stocks', ['firebase', 'ngMaterial'])
             return $q.when(userStockList.$add(stock));
         }
 
+        function assignData(stocks, data) {
+            _.map(stocks, (stock) => {
+                // eslint-disable-next-line no-param-reassign
+                stock.data = _.find(data, (item) => item.Symbol === stock.symbol);
+            });
+        }
+
         return {
-            getAllForUser,
             addModalOpen,
-            add
+            add,
+            assignData,
+            getAllForUser
         };
     });
