@@ -18,12 +18,14 @@ module.exports = function(config) {
             'node_modules/mockfirebase/browser/mockfirebase.js',
             'node_modules/angular-animate/angular-animate.js',
             'node_modules/angular-aria/angular-aria.js',
+            'node_modules/angular-messages/angular-messages.js',
             'node_modules/angular-material/angular-material-mocks.js',
             'node_modules/angular-material/angular-material.js',
             'node_modules/angular-material-data-table/dist/md-data-table.js',
             'app.js',
             'pages/currency-page/currencyPage.js',
             'pages/main-page/mainPage.js',
+            'app*.js',
             'components/**/*.js',
             'pages/**/*.js',
             'services/**/*.js',
@@ -33,9 +35,7 @@ module.exports = function(config) {
         ],
 
         // list of files to exclude
-        exclude: [
-            '.tmp/**/*.spec.js'
-        ],
+        exclude: [],
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
@@ -43,6 +43,7 @@ module.exports = function(config) {
             'pages/**/!(*spec).js': ['coverage'],
             'components/**/!(*spec).js': ['coverage'],
             'services/**/!(*spec).js': ['coverage'],
+            'app!(*spec).js': ['coverage'],
             'pages/**/*.spec.js': ['babel'],
             'components/**/*.spec.js': ['babel'],
             'services/**/*.spec.js': ['babel'],

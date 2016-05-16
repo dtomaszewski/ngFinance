@@ -16,4 +16,4 @@ class ngFinanceAppCtrl {
     }
 }
 
-angular.module('main-page').controller('ngFinanceAppCtrl', ngFinanceAppCtrl);
+angular.module('ng-finance-app').controller('ngFinanceAppCtrl', ngFinanceAppCtrl);
