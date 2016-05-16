@@ -1,6 +1,6 @@
 'use strict';
-angular.module('stocks-data', [])
-    .factory('StocksData', ($http, $q) => {
+angular.module('ngf-stocks')
+    .factory('ngfStocksData', ($http, $q) => {
         const queryStart = 'select * from yahoo.finance.historicaldata where';
 
         function fixedEncodeURIComponent(str) {

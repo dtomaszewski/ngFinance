@@ -1,25 +1,22 @@
 'use strict';
 class MainPageCtrl {
-    constructor(Stocks, StocksData) {
+    constructor(ngfStocks, ngfStocksData) {
         const vm = this;
-
-        vm.stocks = Stocks;
-        vm.stocksData = StocksData;
 
         vm.getFieldData();
 
         vm.addStock = function () {
-            Stocks.addModalOpen();
+            ngfStocks.addModalOpen();
         };
 
         vm.removeStock = function(stock) {
-            Stocks.remove(stock);
+            ngfStocks.remove(stock);
         };
 
-        Stocks.getAllForUser().then((result) => {
+        ngfStocks.getAllForUser().then((result) => {
             vm.allStocks = result;
-            StocksData.getTodayPrices(_.map(result, 'symbol')).then((priceData) => {
-                Stocks.assignData(vm.allStocks, priceData);
+            ngfStocksData.getTodayPrices(_.map(result, 'symbol')).then((priceData) => {
+                ngfStocks.assignData(vm.allStocks, priceData);
             });
         });
     }

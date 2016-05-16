@@ -1,6 +1,6 @@
 'use strict';
 angular.module('ngf-stocks', ['firebase', 'ngMaterial'])
-    .factory('Stocks', ($firebaseArray, $firebaseObject, Firebase, $mdDialog, $q) => {
+    .factory('ngfStocks', ($firebaseArray, $firebaseObject, Firebase, $mdDialog, $q) => {
         const stocksRef = new Firebase('https://ngfinance.firebaseio.com/stocks');
         let userStockList;
 

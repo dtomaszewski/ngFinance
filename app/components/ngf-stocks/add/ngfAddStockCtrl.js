@@ -1,9 +1,9 @@
 'use strict';
 class AddStockCtrl {
-    constructor($mdDialog, Stocks) {
+    constructor($mdDialog, ngfStocks) {
         const vm = this;
         vm.dialog = $mdDialog;
-        vm.stockService = Stocks;
+        vm.stockService = ngfStocks;
         vm.stock = {};
     }
 
