@@ -24,6 +24,10 @@ Sample AngularJS application
 > npm test
 ```
 
+* to check tests code coverage execute
+```sh
+> npm run coverage
+```
 
 [node]: <https://nodejs.org/en/>
 [npm]: <https://www.npmjs.com/>
