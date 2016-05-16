@@ -1,4 +1,4 @@
-fdescribe('Directive : ngfDataTable', () => {
+describe('Directive : ngfDataTable', () => {
     let scope;
     let element;
 
