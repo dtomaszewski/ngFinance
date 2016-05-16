@@ -1,22 +1,22 @@
 'use strict';
 
 angular.module('ngf-currency-converter').factory('ngfCurrency', ($http, $q, $httpParamSerializer) => {
-    const url = 'https://community-neutrino-currency-conversion.p.mashape.com/convert';
+    const url = 'https://currencyconverter.p.mashape.com/';
     const headers = {
-        'X-Mashape-Key': '40sdHLz5OdmshKi9i7UcEGu2vIyip1on4mbjsn74nDQ3BQgo3S',
+        'X-Mashape-Key': 'ixQZhwZE5HmshicU6MNZBMgjhtVgp1PCuzjjsncg1AXyWDQZeE',
         'Content-Type': 'application/x-www-form-urlencoded'
     };
 
     function convert(fromCurrency, toCurrency, amount) {
         return $q.when($http({
-            method: 'POST',
+            method: 'GET',
             url,
             headers,
-            data: $httpParamSerializer({
-                'from-type': fromCurrency,
-                'from-value': amount,
-                'to-type': toCurrency
-            })
+            params: {
+                from: fromCurrency,
+                from_amount: amount,
+                to: toCurrency
+            }
         })).then((result) => result.data);
     }
 
