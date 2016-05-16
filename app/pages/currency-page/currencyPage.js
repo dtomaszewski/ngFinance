@@ -1,2 +1,2 @@
 'use strict';
-angular.module('currency-page', []);
+angular.module('currency-page', ['ngf-currency-converter']);

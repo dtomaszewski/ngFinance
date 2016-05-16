@@ -1,0 +1,40 @@
+<md-content class="ngfCurrencyConverter" layout-padding layout-align="center">
+    <md-card>
+        <form name="currencyForm" ng-submit="calculateCurrency()">
+            <section layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label for="from-currency">From Currency</label>
+                    <input md-maxlength="3" name="fromCurrency" id="from-currency" ng-model="currency.from" ng-required="true">
+                    <div ng-messages="currencyForm.fromCurrency.$error">
+                        <div ng-message="required">Currency is required.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label for="to-currency">To Currency</label>
+                    <input md-maxlength="3" name="toCurrency" id="to-currency" ng-model="currency.to" ng-required="true">
+                    <div ng-messages="currencyForm.toCurrency.$error">
+                        <div ng-message="required">Currency is required.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label for="amount">Amount</label>
+                    <input name="amount" id="amount" ng-model="currency.amount" ng-required="true">
+                    <div ng-messages="currencyForm.amount.$error">
+                        <div ng-message="required">Amount is required.</div>
+                    </div>
+                </md-input-container>
+            </section>
+
+            <section>
+                <md-toolbar class="md-default">
+                    <div class="md-toolbar-tools">
+                        <h3 class="ngfCurrencyConverter-result" ng-if="converted.result">{{ converted['from-value'] }} {{ converted['from-type'] }} is {{ converted.result }} {{ converted['to-type'] }}</h3>
+                        <h3 class="ngfCurrencyConverter-result--error" ng-if="!converted.valid">Wrong data ! Please check currencies!</h3>
+                        <div flex class="flex"></div>
+                        <md-button type="submit" class="md-raised md-primary">Calculate</md-button>
+                    </div>
+                </md-toolbar>
+            </section>
+        </form>
+    </md-card>
+</md-content>

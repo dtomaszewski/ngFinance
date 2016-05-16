@@ -7,6 +7,9 @@
 .u-maxHeight {
   height: 100%; }
 
+.u-maxWidth {
+  width: 100%; }
+
 .md-toolbar-tools {
   background-color: #fff; }
 
@@ -28,3 +31,9 @@
   .ngfSidebar-button.md-button.md-primary {
     color: #42414d;
     margin: 20px; }
+
+.ngfCurrencyConverter-result {
+  color: #42414d; }
+
+.ngfCurrencyConverter-result--error {
+  color: #cc0000; }
