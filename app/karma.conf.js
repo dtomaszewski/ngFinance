@@ -23,6 +23,7 @@ module.exports = function(config) {
             'node_modules/angular-material/angular-material.js',
             'node_modules/angular-material-data-table/dist/md-data-table.js',
             'node_modules/moment/moment.js',
+            'node_modules/lodash/lodash.js',
             'app.js',
             'components/ngf-stocks/ngfStocks.js',
             'pages/currency-page/currencyPage.js',

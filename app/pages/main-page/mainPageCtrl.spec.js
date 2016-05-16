@@ -1,6 +1,7 @@
 describe('Controller : MainPageController', () => {
     let $controller;
     let $q;
+    let $rootScope;
     let mainPageCtrl;
     let ngfStocksData;
     let ngfStocks;
@@ -37,9 +38,10 @@ describe('Controller : MainPageController', () => {
         module('main-page');
     });
 
-    beforeEach(inject((_$controller_, _$q_, _ngfStocksData_, _ngfStocks_) => {
+    beforeEach(inject((_$controller_, _$q_, _ngfStocksData_, _ngfStocks_, _$rootScope_) => {
         $controller = _$controller_;
         $q = _$q_;
+        $rootScope = _$rootScope_;
         mainPageCtrl = $controller('MainPageCtrl');
         ngfStocks = _ngfStocks_;
         ngfStocksData = _ngfStocksData_;
@@ -90,5 +92,38 @@ describe('Controller : MainPageController', () => {
         mainPageCtrl.removeStock();
 
         expect(ngfStocks.remove).toHaveBeenCalled();
+    });
+
+    it('should call getTodayPrices method', () => {
+        const resolveData = [{
+            symbol: 'AAPL',
+            name: 'Apple',
+            price: 123
+        }, {
+            symbol: 'GOOG',
+            name: 'Google',
+            price: 222
+        }];
+        spyOn(ngfStocksData, 'getTodayPrices').and.callFake(() => {
+            const deferred = $q.defer();
+            deferred.resolve(resolveData);
+            return deferred.promise;
+        });
+
+        spyOn(ngfStocks, 'assignData').and.callThrough();
+
+        const stocks = [{
+            symbol: 'AAPL',
+            name: 'Apple'
+        }, {
+            symbol: 'GOOG',
+            name: 'Google'
+        }];
+
+        mainPageCtrl.getStockData(stocks);
+
+        expect(ngfStocksData.getTodayPrices).toHaveBeenCalledWith(['AAPL', 'GOOG']);
+        $rootScope.$digest();
+        expect(ngfStocks.assignData).toHaveBeenCalled();
     });
 });

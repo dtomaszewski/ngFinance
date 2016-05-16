@@ -1,8 +1,9 @@
 'use strict';
 class MainPageCtrl {
-    constructor(ngfStocks, ngfStocksData) {
+    constructor($rootScope, ngfStocks, ngfStocksData) {
         const vm = this;
-
+        vm.ngfStocksData = ngfStocksData;
+        vm.ngfStocks = ngfStocks;
         vm.getFieldData();
 
         vm.addStock = function () {
@@ -15,9 +16,12 @@ class MainPageCtrl {
 
         ngfStocks.getAllForUser().then((result) => {
             vm.allStocks = result;
-            ngfStocksData.getTodayPrices(_.map(result, 'symbol')).then((priceData) => {
-                ngfStocks.assignData(vm.allStocks, priceData);
-            });
+            vm.getStockData(result);
+
+        });
+
+        $rootScope.$on('stockAdded', () => {
+            vm.getStockData(vm.allStocks);
         });
     }
 
@@ -48,6 +52,12 @@ class MainPageCtrl {
                 currency: true
             }
         ];
+    }
+
+    getStockData(stocks) {
+        this.ngfStocksData.getTodayPrices(_.map(stocks, 'symbol')).then((priceData) => {
+            this.ngfStocks.assignData(this.allStocks, priceData);
+        });
     }
 }
 
