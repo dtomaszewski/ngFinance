@@ -3,7 +3,8 @@ angular.module('ngf-stocks', ['firebase', 'ngMaterial'])
     .factory('ngfStocks', ($firebaseArray, $firebaseObject, Firebase, $mdDialog, $q) => {
         const stocksRef = new Firebase('https://ngfinance.firebaseio.com/stocks');
         let userStockList;
-
+        const STOCK_ADDED_EVENT = 'STOCK_ADDED';
+        
         function getAllForUser() {
             const fbRef = stocksRef.orderByChild('count');
             userStockList = $firebaseArray(fbRef);
@@ -41,6 +42,7 @@ angular.module('ngf-stocks', ['firebase', 'ngMaterial'])
             add,
             assignData,
             getAllForUser,
-            remove
+            remove,
+            STOCK_ADDED_EVENT
         };
     });

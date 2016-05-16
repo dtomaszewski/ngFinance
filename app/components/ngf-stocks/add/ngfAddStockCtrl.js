@@ -2,6 +2,7 @@
 class ngfAddStockCtrl {
     constructor($mdDialog, $rootScope, ngfStocks) {
         const vm = this;
+        vm.ngfStocks = ngfStocks;
         vm.dialog = $mdDialog;
         vm.stockService = ngfStocks;
         vm.stock = {};
@@ -11,7 +12,7 @@ class ngfAddStockCtrl {
     addStock(stock) {
         this.stockService.add(stock).then(() => {
             this.dialog.hide();
-            this.rootScope.$broadcast('stockAdded');
+            this.rootScope.$broadcast(this.ngfStocks.STOCK_ADDED_EVENT);
         });
     }
 }

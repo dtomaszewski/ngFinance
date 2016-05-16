@@ -18,6 +18,9 @@ describe('Service : Stock', () => {
         expect(ngfStocks.getAllForUser).toEqual(jasmine.any(Function));
         expect(ngfStocks.addModalOpen).toEqual(jasmine.any(Function));
         expect(ngfStocks.add).toEqual(jasmine.any(Function));
+        expect(ngfStocks.assignData).toEqual(jasmine.any(Function));
+        expect(ngfStocks.remove).toEqual(jasmine.any(Function));
+        expect(ngfStocks.STOCK_ADDED_EVENT).toBe('STOCK_ADDED');
     });
 
     it('should open modal to create new stock', () => {
@@ -42,5 +45,49 @@ describe('Service : Stock', () => {
 
         expect($mdDialog.show).toHaveBeenCalledWith(modalObject);
         expect($mdDialog.hide).toHaveBeenCalled();
+    });
+
+    it('should assign query data properly', () => {
+        const stocks = [
+            {
+                symbol: 'AAPL',
+                name: 'Apple'
+            },
+            {
+                symbol: 'GOOG',
+                name: 'Google'
+            }
+        ];
+        const data = [
+            {
+                Symbol: 'AAPL',
+                amount: 123
+            },
+            {
+                Symbol: 'GOOG',
+                amount: 321
+            }
+        ]
+
+        ngfStocks.assignData(stocks, data);
+
+        expect(stocks).toEqual([
+            {
+                symbol: 'AAPL',
+                name: 'Apple',
+                data: {
+                    Symbol: 'AAPL',
+                    amount: 123
+                }
+            },
+            {
+                symbol: 'GOOG',
+                name: 'Google',
+                data: {
+                    Symbol: 'GOOG',
+                    amount: 321
+                }
+            }
+        ]);
     });
 });

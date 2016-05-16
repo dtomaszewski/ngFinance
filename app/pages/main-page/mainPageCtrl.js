@@ -20,7 +20,7 @@ class MainPageCtrl {
 
         });
 
-        $rootScope.$on('stockAdded', () => {
+        $rootScope.$on(ngfStocks.STOCK_ADDED_EVENT, () => {
             vm.getStockData(vm.allStocks);
         });
     }
