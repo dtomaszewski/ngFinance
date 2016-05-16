@@ -1,5 +1,5 @@
 'use strict';
-class AddStockCtrl {
+class ngfAddStockCtrl {
     constructor($mdDialog, ngfStocks) {
         const vm = this;
         vm.dialog = $mdDialog;
@@ -12,4 +12,4 @@ class AddStockCtrl {
     }
 }
 
-angular.module('ngf-stocks').controller('ngfAddStockCtrl', AddStockCtrl);
+angular.module('ngf-stocks').controller('ngfAddStockCtrl', ngfAddStockCtrl);

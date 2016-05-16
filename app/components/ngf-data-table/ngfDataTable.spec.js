@@ -1,4 +1,4 @@
-describe('Directive : ngfDataTable', () => {
+fdescribe('Directive : ngfDataTable', () => {
     let scope;
     let element;
 
@@ -48,9 +48,11 @@ describe('Directive : ngfDataTable', () => {
         ];
 
         scope.addItem = function () {};
+        scope.removeItem = function () {};
 
         element = angular.element('<ngf-data-table ' +
-            'field-data="fieldData" items="items" title="Test title" add-item="addItem">' +
+            'field-data="fieldData" items="items" ' +
+            'title="Test title" add-item="addItem" remove-item="removeItem">' +
             '</ngf-data-table>');
 
         element = $compile(element)(scope);
@@ -64,6 +66,7 @@ describe('Directive : ngfDataTable', () => {
         expect(isolatedScope.items).toEqual(scope.items);
         expect(isolatedScope.title).toEqual('Test title');
         expect(isolatedScope.addItem).toEqual(jasmine.any(Function));
+        expect(isolatedScope.removeItem).toEqual(jasmine.any(Function));
     });
 
     it('Should have title passed in attribute', () => {

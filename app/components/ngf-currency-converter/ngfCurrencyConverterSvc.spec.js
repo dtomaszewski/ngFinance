@@ -1,4 +1,4 @@
-fdescribe('Service : ngfCurrencyConverterSvc', () => {
+describe('Service : ngfCurrencyConverterSvc', () => {
     let ngfCurrency;
     let $httpBackend;
 
