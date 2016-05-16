@@ -2,7 +2,11 @@
 
 Sample AngularJS application
 
-* install newest [node] and [npm] (npm should be v3.*)
+* install newest [node] and [npm]
+* !important (npm should be v3.*) if You want to update run :
+```sh
+> npm install npm -g
+```
 * clone repo
 ```sh
 > git clone https://github.com/dtomaszewski/ngFinance
