@@ -28,8 +28,8 @@
             <section>
                 <md-toolbar class="md-default">
                     <div class="md-toolbar-tools">
-                        <h3 class="ngfCurrencyConverter-result" ng-if="converted.to_amount">{{ converted.from_amount }} {{ converted.from }} is {{ converted.to_amount }} {{ converted.to }}</h3>
-                        <div flex class="flex"></div>
+                        <h3 class="ngfCurrencyConverter-result" ng-if="converted.to_amount">{{ converted.from_amount | currency:'' }} {{ converted.from }} is {{ converted.to_amount | currency:'' }} {{ converted.to }}</h3>
+                        <div flex></div>
                         <md-button type="submit" class="md-raised md-primary">Calculate</md-button>
                     </div>
                 </md-toolbar>
