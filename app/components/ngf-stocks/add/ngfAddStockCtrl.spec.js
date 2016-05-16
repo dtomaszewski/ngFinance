@@ -2,16 +2,16 @@ describe('Controller : ngfAddStockCtrl', () => {
     let $q;
     let $rootScope;
     let addStockCtrl;
-    let Stocks;
+    let ngfStocks;
 
     beforeEach(() => {
         module('ngf-stocks');
     });
 
-    beforeEach(inject(($controller, _Stocks_, _$q_, _$rootScope_) => {
+    beforeEach(inject(($controller, _ngfStocks_, _$q_, _$rootScope_) => {
         $q = _$q_;
         $rootScope = _$rootScope_;
-        Stocks = _Stocks_;
+        ngfStocks = _ngfStocks_;
         addStockCtrl = $controller('ngfAddStockCtrl');
     }));
 
@@ -26,7 +26,7 @@ describe('Controller : ngfAddStockCtrl', () => {
     });
 
     it('should perform action on addStock', () => {
-        spyOn(Stocks, 'add').and.callFake(() => {
+        spyOn(ngfStocks, 'add').and.callFake(() => {
             const deferred = $q.defer();
             deferred.resolve();
             return deferred.promise;
@@ -42,7 +42,7 @@ describe('Controller : ngfAddStockCtrl', () => {
         addStockCtrl.addStock(stock);
         $rootScope.$apply();
 
-        expect(Stocks.add).toHaveBeenCalledWith(stock);
+        expect(ngfStocks.add).toHaveBeenCalledWith(stock);
         expect(addStockCtrl.dialog.hide).toHaveBeenCalled();
     });
 });

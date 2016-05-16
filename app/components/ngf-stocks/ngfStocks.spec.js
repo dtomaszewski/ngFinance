@@ -2,22 +2,22 @@ describe('Service : Stock', () => {
     let $q;
     let $mdDialog;
     let $rootScope;
-    let Stocks;
+    let ngfStocks;
     beforeEach(() => {
         module('ngf-stocks');
     });
 
-    beforeEach(inject((_$q_, _$mdDialog_, _$rootScope_, _Stocks_) => {
-        Stocks = _Stocks_;
+    beforeEach(inject((_$q_, _$mdDialog_, _$rootScope_, _ngfStocks_) => {
+        ngfStocks = _ngfStocks_;
         $q = _$q_;
         $mdDialog = _$mdDialog_;
         $rootScope = _$rootScope_;
     }));
 
     it('should have methods defined', () => {
-        expect(Stocks.getAllForUser).toEqual(jasmine.any(Function));
-        expect(Stocks.addModalOpen).toEqual(jasmine.any(Function));
-        expect(Stocks.add).toEqual(jasmine.any(Function));
+        expect(ngfStocks.getAllForUser).toEqual(jasmine.any(Function));
+        expect(ngfStocks.addModalOpen).toEqual(jasmine.any(Function));
+        expect(ngfStocks.add).toEqual(jasmine.any(Function));
     });
 
     it('should open modal to create new stock', () => {
@@ -37,7 +37,7 @@ describe('Service : Stock', () => {
         });
         spyOn($mdDialog, 'hide');
 
-        Stocks.addModalOpen();
+        ngfStocks.addModalOpen();
         $rootScope.$digest();
 
         expect($mdDialog.show).toHaveBeenCalledWith(modalObject);
