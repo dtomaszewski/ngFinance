@@ -1,4 +1,4 @@
-fdescribe('Directive : ngfCurrencyConverter', () => {
+describe('Directive : ngfCurrencyConverter', () => {
     let $q;
     let scope;
     let element;

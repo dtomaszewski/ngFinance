@@ -4,7 +4,7 @@
   "description": "sample AngularJS app",
   "main": "app.js",
   "scripts": {
-    "coverage": "lite-server -c coverage/coverage.server.conf.json",
+    "coverage": "lite-server -c coverage-server.json",
     "karma": "karma start karma.conf.js",
     "test": "concurrently \"npm run babel\" \"npm run karma\" ",
     "styles": "node-sass app.scss app.css -w",
