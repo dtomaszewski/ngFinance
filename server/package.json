@@ -1,0 +1,17 @@
+{
+  "name": "ng-finance",
+  "version": "0.0.1",
+  "description": "Fill stock data in firebase",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dtomaszewski.js@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^2.4.2",
+    "lodash": "^4.12.0",
+    "promised-mongo": "^1.2.0",
+    "rethinkdb": "^2.3.1"
+  }
+}

@@ -29,5 +29,12 @@ Sample AngularJS application
 > npm run coverage
 ```
 
+* to import some test data into database from stocks.json 
+```sh
+> cd ngFinance/server
+> npm install
+> node import
+```
+
 [node]: <https://nodejs.org/en/>
 [npm]: <https://www.npmjs.com/>

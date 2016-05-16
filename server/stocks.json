@@ -1,0 +1,22 @@
+{
+  "1": {
+    "count": 123,
+    "name": "Google",
+    "symbol": "GOOG"
+  },
+  "2": {
+    "count": 112,
+    "name": "Apple",
+    "symbol": "AAPL"
+  },
+  "3": {
+    "count": 2,
+    "name": "Yahoo",
+    "symbol": "YHOO"
+  },
+  "4": {
+    "count": 22,
+    "name": "Microsoft",
+    "symbol": "MSFT"
+  }
+}
