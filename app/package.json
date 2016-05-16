@@ -8,7 +8,7 @@
     "karma": "karma start karma.conf.js",
     "test": "concurrently \"npm run babel\" \"npm run karma\" ",
     "styles": "node-sass app.scss app.css -w",
-    "babel": "babel app.js app.conf.js appCtrl.js pages components services --out-dir .tmp --watch --presets es2015",
+    "babel": "babel app.js app.conf.js appCtrl.js pages components --out-dir .tmp --watch --presets es2015",
     "server": "lite-server",
     "start": "concurrently \"npm run styles\" \"npm run babel\" \"npm run server\""
   },

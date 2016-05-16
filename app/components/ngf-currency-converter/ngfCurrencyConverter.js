@@ -10,12 +10,11 @@ angular.module('ngf-currency-converter', [])
         };
 
         function link(scope) {
-
+            // eslint-disable-next-line no-param-reassign
             scope.calculateCurrency = function () {
-                console.log(scope.currency);
                 ngfCurrency.convert(scope.currency.from, scope.currency.to, scope.currency.amount)
                     .then((result) => {
-                        console.log(result);
+                        // eslint-disable-next-line no-param-reassign
                         scope.converted = result;
                     });
             };

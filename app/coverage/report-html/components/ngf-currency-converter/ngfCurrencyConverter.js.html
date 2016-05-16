@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">20% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/10</span>
+        <span class='fraction'>7/7</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">20% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/10</span>
+        <span class='fraction'>7/7</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -66,15 +66,10 @@
 21
 22
 23
-24
-25
-26
-27
-28
-29</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+24</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -84,25 +79,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
-angular.module('ngf-currency-converter', ['currency'])
-    .directive('ngfCurrencyConverter', (Currency) =&gt; {
-<span class="cstat-no" title="statement not covered" >        const directive = {</span>
+angular.module('ngf-currency-converter', [])
+    .directive('ngfCurrencyConverter', (ngfCurrency) =&gt; {
+        const directive = {
             restrict: 'E',
             replace: true,
             templateUrl: 'components/ngf-currency-converter/ngf-currency-converter.tmpl.html',
@@ -110,30 +100,25 @@ angular.module('ngf-currency-converter', ['currency'])
             link
         };
 &nbsp;
-<span class="fstat-no" title="function not covered" >        function link(scope) {</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >            scope.converted = {</span>
-                valid: true
-            };
-&nbsp;
-<span class="cstat-no" title="statement not covered" >            scope.calculateCurrency = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >                console.log(scope.currency);</span>
-<span class="cstat-no" title="statement not covered" >                Currency.convert(scope.currency.from, scope.currency.to, scope.currency.amount)</span>
+        function link(scope) {
+            // eslint-disable-next-line no-param-reassign
+            scope.calculateCurrency = function () {
+                ngfCurrency.convert(scope.currency.from, scope.currency.to, scope.currency.amount)
                     .then((result) =&gt; {
-<span class="cstat-no" title="statement not covered" >                        console.log(result);</span>
-<span class="cstat-no" title="statement not covered" >                        scope.converted = result;</span>
+                        // eslint-disable-next-line no-param-reassign
+                        scope.converted = result;
                     });
             };
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        return directive;</span>
+        return directive;
     });</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon May 16 2016 15:45:09 GMT+0200 (CEST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon May 16 2016 16:59:46 GMT+0200 (CEST)
 </div>
 </div>
 <script src="../../prettify.js"></script>

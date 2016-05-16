@@ -2,7 +2,6 @@ describe('Directive : ngfDataTable', () => {
     let scope;
     let element;
 
-    // const addItem;
     beforeEach(module('templates'));
     beforeEach(module('ngMaterial'));
     beforeEach(module('md.data.table'));

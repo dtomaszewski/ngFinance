@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">64.29% </span>
+        <span class="strong">8.33% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>9/14</span>
+        <span class='fraction'>1/12</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/4</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">64.29% </span>
+        <span class="strong">8.33% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>9/14</span>
+        <span class='fraction'>1/12</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -96,28 +96,22 @@
 51
 52
 53
-54
-55
-56
-57</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+54</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -126,7 +120,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -157,32 +151,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
 class MainPageCtrl {
-    constructor(Stocks, StocksData) {
-        const vm = this;
+    constructor<span class="fstat-no" title="function not covered" >(ngfStocks, ngfStocksData) {</span>
+<span class="cstat-no" title="statement not covered" >        const vm = this;</span>
 &nbsp;
-        vm.stocks = Stocks;
-        vm.stocksData = StocksData;
+<span class="cstat-no" title="statement not covered" >        vm.getFieldData();</span>
 &nbsp;
-        vm.getFieldData();
-&nbsp;
-        vm.addStock = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >            Stocks.addModalOpen();</span>
+<span class="cstat-no" title="statement not covered" >        vm.addStock = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >            ngfStocks.addModalOpen();</span>
         };
 &nbsp;
-        vm.removeStock = <span class="fstat-no" title="function not covered" >function(stock) {</span>
-<span class="cstat-no" title="statement not covered" >            Stocks.remove(stock);</span>
+<span class="cstat-no" title="statement not covered" >        vm.removeStock = <span class="fstat-no" title="function not covered" >function(stock) {</span></span>
+<span class="cstat-no" title="statement not covered" >            ngfStocks.remove(stock);</span>
         };
 &nbsp;
-        Stocks.getAllForUser().then((result) =&gt; {
+<span class="cstat-no" title="statement not covered" >        ngfStocks.getAllForUser().then((result) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            vm.allStocks = result;</span>
-<span class="cstat-no" title="statement not covered" >            StocksData.getTodayPrices(_.map(result, 'symbol')).then((priceData) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                Stocks.assignData(vm.allStocks, priceData);</span>
+<span class="cstat-no" title="statement not covered" >            ngfStocksData.getTodayPrices(_.map(result, 'symbol')).then((priceData) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                ngfStocks.assignData(vm.allStocks, priceData);</span>
             });
         });
     }
 &nbsp;
-    getFieldData() {
-        this.fieldData = [
+    getFieldData<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >        this.fieldData = [</span>
             {
                 columnName: 'Symbol',
                 fieldName: 'symbol'
@@ -217,7 +208,7 @@ angular.module('main-page').controller('MainPageCtrl', MainPageCtrl);</pre></td>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon May 16 2016 15:45:09 GMT+0200 (CEST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon May 16 2016 16:59:46 GMT+0200 (CEST)
 </div>
 </div>
 <script src="../../prettify.js"></script>

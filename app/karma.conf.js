@@ -25,6 +25,7 @@ module.exports = function(config) {
             'app.js',
             'pages/currency-page/currencyPage.js',
             'pages/main-page/mainPage.js',
+            'components/ngf-stocks/ngfStocks.js',
             'app*.js',
             'components/**/*.js',
             'pages/**/*.js',

@@ -1,4 +1,0 @@
-{
-    "files": ["**/*.{html,htm,css,js}"],
-    "server": { "baseDir": "./coverage/report-html" }
-}
