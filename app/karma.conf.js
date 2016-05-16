@@ -71,7 +71,8 @@ module.exports = function(config) {
         // Code test coverage reporter configuration
         coverageReporter: {
             type: 'html',
-            dir: 'coverage/'
+            dir: 'coverage/',
+            subdir: 'report-html'
         },
 
         // web server port
