@@ -19,7 +19,7 @@
             <tbody md-body>
             <tr md-row ng-repeat="item in items | orderBy: myOrder">
                 <td md-cell ng-repeat="fieldDataItem in fieldData">
-                    {{ fieldDataItem.dataField ? item.data[fieldDataItem.fieldName] : item[fieldDataItem.fieldName] }}
+                    <span>{{ fieldDataItem.dataField ? item.data[fieldDataItem.fieldName] : item[fieldDataItem.fieldName] | conditionalCurrency:fieldDataItem.currency }}</span>
                 </td>
                 <td md-cell>
                     <md-button ng-click="removeItem(item)" class="md-primary" aria-label="Use Android">

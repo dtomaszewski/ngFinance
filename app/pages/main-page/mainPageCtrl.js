@@ -7,7 +7,6 @@ class MainPageCtrl {
         vm.stocksData = StocksData;
 
         vm.getFieldData();
-        vm.getStocks();
 
         vm.addStock = function () {
             Stocks.addModalOpen();
@@ -16,6 +15,13 @@ class MainPageCtrl {
         vm.removeStock = function(stock) {
             Stocks.remove(stock);
         };
+
+        Stocks.getAllForUser().then((result) => {
+            vm.allStocks = result;
+            StocksData.getTodayPrices(_.map(result, 'symbol')).then((priceData) => {
+                Stocks.assignData(vm.allStocks, priceData);
+            });
+        });
     }
 
     getFieldData() {
@@ -33,20 +39,18 @@ class MainPageCtrl {
                 fieldName: 'count'
             },
             {
-                columnName: 'Today price',
+                columnName: 'Last open price',
+                fieldName: 'Open',
+                dataField: true,
+                currency: true
+            },
+            {
+                columnName: 'Last close price',
                 fieldName: 'Close',
-                dataField: true
+                dataField: true,
+                currency: true
             }
         ];
-    }
-
-    getStocks() {
-        this.stocks.getAllForUser().then((result) => {
-            this.allStocks = result;
-            this.stocksData.getTodayPrices(_.map(result, 'symbol')).then((priceData) => {
-                this.stocks.assignData(this.allStocks, priceData);
-            });
-        });
     }
 }
 

@@ -3,7 +3,6 @@ angular.module('stocks-data', [])
     .factory('StocksData', ($http, $q) => {
         const queryStart = 'select * from yahoo.finance.historicaldata where';
 
-        // TODO move to separate service
         function fixedEncodeURIComponent(str) {
             return encodeURIComponent(str).replace(/[!'()]/g, escape).replace(/\*/g, '%2A')
                 .replace(/"/g, '%22');
@@ -31,19 +30,16 @@ angular.module('stocks-data', [])
 
         function getTodayPrices(symbols) {
             const lastWorkingDay = getLastWorkingDay();
-            return $q.when(
-                getPeriodData(formatQuerySymbols(symbols), lastWorkingDay, lastWorkingDay)
-            );
+            return getPeriodData(formatQuerySymbols(symbols), lastWorkingDay, lastWorkingDay);
         }
 
-        // TODO move to separate service.
         function getLastWorkingDay() {
             // some dirty solution just to avoid weekends
-            let subtractDays = 0;
+            let subtractDays = 1;
             if (moment().isoWeekday() === 7) {
                 subtractDays = 2;
-            } else if (moment().isoWeekday() === 6) {
-                subtractDays = 1;
+            } else if (moment().isoWeekday() === 1) {
+                subtractDays = 3;
             }
 
             return moment().subtract(subtractDays, 'day').format('YYYY-MM-DD');
