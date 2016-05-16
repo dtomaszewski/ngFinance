@@ -28,10 +28,8 @@ module.exports = function(config) {
             'app*.js',
             'components/**/*.js',
             'pages/**/*.js',
-            'services/**/*.js',
             'components/**/*.tmpl.html',
-            'pages/**/*.tmpl.html',
-            'services/**/*.tmpl.html'
+            'pages/**/*.tmpl.html'
         ],
 
         // list of files to exclude
@@ -42,12 +40,9 @@ module.exports = function(config) {
         preprocessors: {
             'pages/**/!(*spec).js': ['coverage'],
             'components/**/!(*spec).js': ['coverage'],
-            'services/**/!(*spec).js': ['coverage'],
             'app!(*spec).js': ['coverage'],
             'pages/**/*.spec.js': ['babel'],
             'components/**/*.spec.js': ['babel'],
-            'services/**/*.spec.js': ['babel'],
-            'services/**/**/*.spec.js': ['babel'],
             '**/*.tmpl.html': ['ng-html2js']
         },
 
