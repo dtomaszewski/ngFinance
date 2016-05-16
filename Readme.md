@@ -15,6 +15,11 @@ Sample AngularJS application
 > npm start
 ```
 
+* to run tests execute below from app folder
+```sh
+> npm test
+```
+
 
 [node]: <https://nodejs.org/en/>
 [npm]: <https://www.npmjs.com/>
