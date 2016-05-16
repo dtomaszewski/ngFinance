@@ -26,7 +26,10 @@ module.exports = function(config) {
             'pages/main-page/mainPage.js',
             'components/**/*.js',
             'pages/**/*.js',
-            'services/**/*.js'
+            'services/**/*.js',
+            'components/**/*.tmpl.html',
+            'pages/**/*.tmpl.html',
+            'services/**/*.tmpl.html'
         ],
 
         // list of files to exclude
@@ -43,7 +46,8 @@ module.exports = function(config) {
             'pages/**/*.spec.js': ['babel'],
             'components/**/*.spec.js': ['babel'],
             'services/**/*.spec.js': ['babel'],
-            'services/**/**/*.spec.js': ['babel']
+            'services/**/**/*.spec.js': ['babel'],
+            '**/*.tmpl.html': ['ng-html2js']
         },
 
         // Babel preprocessor configuration
@@ -52,6 +56,10 @@ module.exports = function(config) {
                 presets: ['es2015'],
                 sourceMap: 'inline'
             }
+        },
+
+        ngHtml2JsPreprocessor: {
+            moduleName: 'templates'
         },
 
         // test results reporter to use
