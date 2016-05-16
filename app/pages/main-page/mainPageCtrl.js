@@ -1,9 +1,25 @@
 'use strict';
 class MainPageCtrl {
-    constructor(Currency, Stocks, StocksData) {
+    constructor(Stocks, StocksData) {
         const vm = this;
 
-        vm.fieldData = [
+        vm.stocks = Stocks;
+        vm.stocksData = StocksData;
+
+        vm.getFieldData();
+        vm.getStocks();
+
+        vm.addStock = function () {
+            Stocks.addModalOpen();
+        };
+
+        vm.removeStock = function(stock) {
+            Stocks.remove(stock);
+        };
+    }
+
+    getFieldData() {
+        this.fieldData = [
             {
                 columnName: 'Symbol',
                 fieldName: 'symbol'
@@ -22,21 +38,15 @@ class MainPageCtrl {
                 dataField: true
             }
         ];
+    }
 
-        Stocks.getAllForUser().then((result) => {
-            vm.allStocks = result;
-            StocksData.getTodayPrices(_.map(result, 'symbol')).then((priceData) => {
-                Stocks.assignData(vm.allStocks, priceData);
+    getStocks() {
+        this.stocks.getAllForUser().then((result) => {
+            this.allStocks = result;
+            this.stocksData.getTodayPrices(_.map(result, 'symbol')).then((priceData) => {
+                this.stocks.assignData(this.allStocks, priceData);
             });
         });
-
-        vm.addStock = function () {
-            Stocks.addModalOpen();
-        };
-
-        vm.removeStock = function (stock) {
-            Stocks.remove(stock);
-        };
     }
 }
 
