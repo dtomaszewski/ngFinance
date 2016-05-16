@@ -1,6 +1,6 @@
 'use strict';
 class MainPageCtrl {
-    constructor($timeout, Stocks, StocksData) {
+    constructor(Currency, Stocks, StocksData) {
         const vm = this;
 
         vm.fieldData = [

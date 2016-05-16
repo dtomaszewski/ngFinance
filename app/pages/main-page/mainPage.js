@@ -1,2 +1,7 @@
 'use strict';
-angular.module('main-page', ['stocks', 'stocks-data', 'ngf-data-table']);
+angular.module('main-page', [
+    'currency',
+    'stocks',
+    'stocks-data',
+    'ngf-data-table'
+]);
