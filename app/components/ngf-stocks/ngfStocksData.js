@@ -3,10 +3,10 @@ angular.module('ngf-stocks')
     .factory('ngfStocksData', ($http, $q) => {
         const queryStart = 'select * from yahoo.finance.historicaldata where';
 
-        function fixedEncodeURIComponent(str) {
-            return encodeURIComponent(str).replace(/[!'()]/g, escape).replace(/\*/g, '%2A')
-                .replace(/"/g, '%22');
-        }
+        return {
+            getPeriodData,
+            getTodayPrices
+        };
 
         function getPeriodData(stockSymbols, startDate, endDate) {
             const deferred = $q.defer();
@@ -33,6 +33,11 @@ angular.module('ngf-stocks')
             return getPeriodData(formatQuerySymbols(symbols), lastWorkingDay, lastWorkingDay);
         }
 
+        function fixedEncodeURIComponent(str) {
+            return encodeURIComponent(str).replace(/[!'()]/g, escape).replace(/\*/g, '%2A')
+                .replace(/"/g, '%22');
+        }
+
         function getLastWorkingDay() {
             // some dirty solution just to avoid weekends
             let subtractDays = 1;
@@ -56,9 +61,4 @@ angular.module('ngf-stocks')
 
             return `http://query.yahooapis.com/v1/public/yql?q=${fixedEncodeURIComponent(query)}${format}`;
         }
-
-        return {
-            getPeriodData,
-            getTodayPrices
-        };
     });

@@ -1,4 +1,4 @@
-fdescribe('Filter : ngfDataTableFilter', () => {
+describe('Filter : ngfDataTableFilter', () => {
     let $filter;
     beforeEach(module('ngf-data-table'));
 

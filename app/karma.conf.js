@@ -22,6 +22,7 @@ module.exports = function(config) {
             'node_modules/angular-material/angular-material-mocks.js',
             'node_modules/angular-material/angular-material.js',
             'node_modules/angular-material-data-table/dist/md-data-table.js',
+            'node_modules/moment/moment.js',
             'app.js',
             'pages/currency-page/currencyPage.js',
             'pages/main-page/mainPage.js',
