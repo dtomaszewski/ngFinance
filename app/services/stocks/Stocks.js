@@ -25,6 +25,10 @@ angular.module('stocks', ['firebase', 'ngMaterial'])
             return $q.when(userStockList.$add(stock));
         }
 
+        function remove(stock) {
+            return $q.when(userStockList.$remove(stock));
+        }
+
         function assignData(stocks, data) {
             _.map(stocks, (stock) => {
                 // eslint-disable-next-line no-param-reassign
@@ -36,6 +40,7 @@ angular.module('stocks', ['firebase', 'ngMaterial'])
             addModalOpen,
             add,
             assignData,
-            getAllForUser
+            getAllForUser,
+            remove
         };
     });

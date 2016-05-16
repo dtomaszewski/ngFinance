@@ -33,6 +33,10 @@ class MainPageCtrl {
         vm.addStock = function () {
             Stocks.addModalOpen();
         };
+
+        vm.removeStock = function (stock) {
+            Stocks.remove(stock);
+        };
     }
 }
 

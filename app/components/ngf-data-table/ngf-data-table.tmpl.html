@@ -21,6 +21,11 @@
                 <td md-cell ng-repeat="fieldDataItem in fieldData">
                     {{ fieldDataItem.dataField ? item.data[fieldDataItem.fieldName] : item[fieldDataItem.fieldName] }}
                 </td>
+                <td md-cell>
+                    <md-button ng-click="removeItem(item)" class="md-primary" aria-label="Use Android">
+                        <md-icon><i class="material-icons">delete forever</i></md-icon>
+                    </md-button>
+                </td>
             </tr>
             </tbody>
         </table>
