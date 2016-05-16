@@ -12,4 +12,4 @@ class AddStockCtrl {
     }
 }
 
-angular.module('stocks').controller('AddStockCtrl', AddStockCtrl);
+angular.module('ngf-stocks').controller('ngfAddStockCtrl', AddStockCtrl);

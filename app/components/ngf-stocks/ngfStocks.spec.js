@@ -4,7 +4,7 @@ describe('Service : Stock', () => {
     let $rootScope;
     let Stocks;
     beforeEach(() => {
-        module('stocks');
+        module('ngf-stocks');
     });
 
     beforeEach(inject((_$q_, _$mdDialog_, _$rootScope_, _Stocks_) => {
@@ -23,11 +23,11 @@ describe('Service : Stock', () => {
     it('should open modal to create new stock', () => {
         const modalObject = {
             clickOutsideToClose: true,
-            controller: 'AddStockCtrl',
-            controllerAs: 'addStockCtrl',
+            controller: 'ngfAddStockCtrl',
+            controllerAs: 'ngfAddStockCtrl',
             focusOnOpen: false,
             targetEvent: event,
-            templateUrl: 'services/stocks/add/add-stock.tmpl.html'
+            templateUrl: 'components/ngf-stocks/add/ngf-add-stock.tmpl.html'
         };
 
         spyOn($mdDialog, 'show').and.callFake(() => {

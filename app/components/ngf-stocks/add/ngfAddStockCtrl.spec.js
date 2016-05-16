@@ -1,18 +1,18 @@
-describe('Controller : AddStockCtrl', () => {
+describe('Controller : ngfAddStockCtrl', () => {
     let $q;
     let $rootScope;
     let addStockCtrl;
     let Stocks;
 
     beforeEach(() => {
-        module('stocks');
+        module('ngf-stocks');
     });
 
     beforeEach(inject(($controller, _Stocks_, _$q_, _$rootScope_) => {
         $q = _$q_;
         $rootScope = _$rootScope_;
         Stocks = _Stocks_;
-        addStockCtrl = $controller('AddStockCtrl');
+        addStockCtrl = $controller('ngfAddStockCtrl');
     }));
 
     it('should be defined', () => {

@@ -1,5 +1,5 @@
 'use strict';
-angular.module('stocks', ['firebase', 'ngMaterial'])
+angular.module('ngf-stocks', ['firebase', 'ngMaterial'])
     .factory('Stocks', ($firebaseArray, $firebaseObject, Firebase, $mdDialog, $q) => {
         const stocksRef = new Firebase('https://ngfinance.firebaseio.com/stocks');
         let userStockList;
@@ -13,11 +13,11 @@ angular.module('stocks', ['firebase', 'ngMaterial'])
         function addModalOpen() {
             $mdDialog.show({
                 clickOutsideToClose: true,
-                controller: 'AddStockCtrl',
-                controllerAs: 'addStockCtrl',
+                controller: 'ngfAddStockCtrl',
+                controllerAs: 'ngfAddStockCtrl',
                 focusOnOpen: false,
                 targetEvent: event,
-                templateUrl: 'services/stocks/add/add-stock.tmpl.html'
+                templateUrl: 'components/ngf-stocks/add/ngf-add-stock.tmpl.html'
             }).then(() => $mdDialog.hide());
         }
 
