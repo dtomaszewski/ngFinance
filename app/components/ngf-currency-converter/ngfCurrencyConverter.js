@@ -1,6 +1,6 @@
 'use strict';
-angular.module('ngf-currency-converter', ['currency'])
-    .directive('ngfCurrencyConverter', (Currency) => {
+angular.module('ngf-currency-converter', [])
+    .directive('ngfCurrencyConverter', (ngfCurrency) => {
         const directive = {
             restrict: 'E',
             replace: true,
@@ -17,7 +17,7 @@ angular.module('ngf-currency-converter', ['currency'])
 
             scope.calculateCurrency = function () {
                 console.log(scope.currency);
-                Currency.convert(scope.currency.from, scope.currency.to, scope.currency.amount)
+                ngfCurrency.convert(scope.currency.from, scope.currency.to, scope.currency.amount)
                     .then((result) => {
                         console.log(result);
                         scope.converted = result;

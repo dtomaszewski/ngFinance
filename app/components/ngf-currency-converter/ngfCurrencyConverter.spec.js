@@ -1,7 +1,4 @@
-describe('Directive : ngfCurrencyConverter', () => {
-    let scope;
-    let element;
-
+describe('Service : Currency', () => {
     it('', () => {
 
     });

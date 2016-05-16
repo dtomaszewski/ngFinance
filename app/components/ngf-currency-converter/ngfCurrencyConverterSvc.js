@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('currency', []).factory('Currency', ($http, $q, $httpParamSerializer) => {
+angular.module('ngf-currency-converter').factory('ngfCurrency', ($http, $q, $httpParamSerializer) => {
     const url = 'https://community-neutrino-currency-conversion.p.mashape.com/convert';
     const headers = {
         'X-Mashape-Key': '40sdHLz5OdmshKi9i7UcEGu2vIyip1on4mbjsn74nDQ3BQgo3S',
